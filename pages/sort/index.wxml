@@ -1,0 +1,23 @@
+<!--pages/sort/index.wxml-->
+<view class="sort">
+    <scroll-view scroll-y="true" class="nav_left">
+        <view wx:for="{{navLeftItems}}" wx:key="index" data-index="{{index}}"
+              class="{{tapIndex===index?'text_red':''}}" bind:tap="getTapIndex">
+            <text>{{item}}</text>
+        </view>
+    </scroll-view>
+    <scroll-view scroll-y="true" class="nav_right" scroll-top="{{scroll_top}}">
+        <view calss="main">
+            <view wx:for="{{goods_sort[tapIndex]}}" wx:for-item="item" wx:for-index="index" wx:key="index" class="item">
+                <view class="item_title">{{item[index]['sort']}}</view>
+                <view class="item_flx">
+                    <view wx:for="{{item}}" wx:for-item="items" wx:for-index="indexs" wx:key="indexs" class="item_unit">
+                        <image mode="widthFix" src="{{items.imgUrl}}" class="img"></image>
+                        <text class="text">{{items.title}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <text>{{ getTiem}}</text>
+    </scroll-view>
+</view>

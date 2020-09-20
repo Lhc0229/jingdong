@@ -1,0 +1,57 @@
+<!--pages/detail/index.wxml-->
+<view class="details">
+    <scroll-view scroll-y class="scroll">
+        <view class="header">
+            <image mode="widthFix" src="{{item.imgUrl}}"></image>
+            <text>{{item.title}}</text>
+            <text>￥{{item.newPrice}}</text>
+        </view>
+        <view class="main">
+            <view class="pay">
+                <view>
+                    <text>支付</text>
+                    <text>{{text}}</text>
+                </view>
+                <text bind:tap="show">...</text>
+            </view>
+            <view class="pay choose">
+                <view>
+                    <text>已选</text>
+                    <view>
+                        <button bind:tap="Count" data-index="+">+</button>
+                        <text>{{count}}件</text>
+                        <button bind:tap="Count" data-index="-">-</button>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+    <view class="bottom">
+       <view class="left">
+           <navigator url="/pages/cart/index" open-type="switchTab">
+               <button>购物车</button>
+           </navigator>
+       </view>
+        <view class="right">
+            <button bind:tap="join">加入购物车</button>
+        </view>
+    </view>
+    <view class="white_note" wx:if="{{show}}">
+        <view class="title">
+            <text>打白条购买</text>
+            <text bind:tap="hide">×</text>
+        </view>
+        <view class="main">
+            <radio-group bindchange="radioChange" class="radio_g">
+                <view class="item" wx:for="{{price}}" wx:key="index" data-index="{{index}}">
+                    <radio color="red" value="{{item.divide}}" class="radio"/>
+                    <view>
+                        <text>{{item.divide}}</text>
+                        <text>{{item.rate}}</text>
+                    </view>
+                </view>
+            </radio-group>
+        </view>
+        <view class="lj" bind:tap="show">立即打白条</view>
+    </view>
+</view>

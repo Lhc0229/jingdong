@@ -1,0 +1,8 @@
+<!--components/tabbar/index.wxml-->
+<view class="index">
+    <view class="tabBar" wx:for="{{tabBar}}" bind:tap="getTapIndex" wx:key="index" data-index="{{index}}">
+        <image mode="aspectFit" src="{{item.imgUrl}}" class="img"></image>
+        <text class="text">{{item.title}}</text>
+    </view>
+</view>
+

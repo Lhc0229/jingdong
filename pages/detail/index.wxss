@@ -1,0 +1,184 @@
+/* pages/detail/index.wxss */
+.details{
+    overflow: hidden;
+    background-color: #f4f4f4;
+}
+.scroll{
+    margin-bottom: 120rpx;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.header image{
+    width: 100%;
+}
+.header{
+    overflow: hidden;
+    background-color: #fff;
+}
+.header text{
+    padding: 0 20rpx;
+    display: block;
+    text-align: justify;
+    box-sizing: border-box;
+    font-size: 28rpx;
+    overflow: hidden;
+}
+.header text:nth-child(3){
+    font-size: 40rpx;
+    color: red;
+    margin: 30rpx 0;
+}
+.main{
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.pay{
+    border-top: 2rpx solid #e8e8ed;
+    border-bottom: 2rpx solid #e8e8ed;
+    background: #fff;
+    padding: 30rpx 20rpx;
+    box-sizing: border-box;
+    margin-top: 20rpx;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    font-size: 28rpx;
+}
+.pay view text:first-child{
+    margin-right: 40rpx;
+}
+.bottom{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.bottom>view{
+    box-sizing: border-box;
+    width: 50%;
+    height: 100%;
+    font-size: 36rpx;
+}
+.bottom button{
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    font-weight: lighter;
+}
+.bottom>view:first-child button{
+    background-color: #fff;
+}
+.bottom>view:last-child button{
+    background-color: red;
+    color: #fff;
+}
+.white_note{
+    position: fixed;
+    z-index: 999999999;
+    left: 0;
+    bottom: 0;
+    background-color: #fff;
+    width: 100%;
+    height: 710rpx;
+}
+.white_note .title text{
+    display: block;
+    font-size: 28rpx;
+    height: 80rpx;
+    background-color: #f3f2f8;
+    line-height: 80rpx;
+    color: #333;
+}
+.white_note .title text:first-child{
+    text-align: center;
+}
+.white_note .title text:last-child{
+    position: absolute;
+    top: 0;
+    right: 20rpx;
+}
+.lj{
+    background: #e4393c;
+    height: 100rpx;
+    color: #fff;
+    width: 100%;
+    line-height: 100rpx;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
+.white_note .main{
+    background-color: #fff;
+    padding: 0 20rpx;
+    box-sizing: border-box;
+    /*height: 600rpx;*/
+}
+.item{
+    display: flex;
+    justify-content: space-between;
+    height: 90rpx;
+    box-sizing: border-box;
+    padding: 10rpx 0;
+    margin-bottom: 20rpx;
+}
+.item view{
+    width: 624rpx;
+    box-sizing: border-box;
+    margin-top: 20.8rpx;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.item .radio{
+    width: 36rpx;
+    height: 36rpx;
+    margin-top: 27rpx;
+}
+.item text{
+    display: flex;
+    flex-direction: column;
+    font-size: 24rpx;
+    overflow: hidden;
+}
+.item text:last-child{
+    color: #999;
+}
+.choose>view{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.choose>view>view{
+    display: flex;
+}
+.choose>view>view button{
+    width: 40rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    text-align: center;
+    box-sizing: border-box;
+    border-radius: 20rpx;
+    padding: 0;
+    margin: 0 20rpx;
+    color: red;
+}
+navigator,.left,.right{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+.left,.right{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}

@@ -1,0 +1,19 @@
+/* components/tabbar/index.wxss */
+.index{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    box-sizing: border-box;
+    padding: 8rpx 30rpx;
+    margin-top: 60rpx;
+    border-top: 2rpx solid #a2a2a2;
+}
+.tabBar .img{
+    width: 56rpx;
+    height: 56rpx;
+}
+.tabBar .text{
+    font-size:22rpx;
+    text-align: center;
+    display: block;
+}

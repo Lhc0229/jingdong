@@ -1,0 +1,128 @@
+<!--index.wxml-->
+<view>
+    <view class="header_fix">
+        <view class="header">
+            <!-- 搜索框 -->
+            <view class="search">
+                <input placeholder="男装外套"></input>
+                <image src="../../image/index/ati.png" mode="widthFix" lazy-load="true"></image>
+            </view>
+            <!--搜索栏左侧抖动的小图片-->
+            <view class="search_img">
+                <image src="../../image/index/tiaodong.jpg" mode="heightFix" lazy-load="true"></image>
+            </view>
+        </view>
+        <!--    mini小导航-->
+        <view class="mini_nav">
+            <scroll-view scroll-x="true" class="min-nav" enable-flex="true">
+                <view wx:for="{{min_nav}}" wx:key="index" data-index="{{index}}" bind:tap="getTapIndex">
+                    <text class="{{tapIndex===index ? 'bt_color':''}}">{{item}}</text>
+                </view>
+            </scroll-view>
+            <view bind:tap="tapArrow">
+                <image mode="aspectFit" src="../../image/index/right.png" class="{{Arrow?'.Arrow_bottom':'.Arrow_top'}}"></image>
+            </view>
+            <view class="mini_bottom" wx:if="{{!Arrow}}">
+                <view>
+                    <view wx:for="{{min_nav}}" wx:key="index">
+                        <text>{{item}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+<!--    主体-->
+    <scroll-view scroll-y="true" class="main">
+<!--        轮播图-->
+        <swiper autoplay="true" indicator-dots="true"
+                duration="1000" interval="4000"
+                class="banner" circular="true"
+                indicator-color="rgba(255, 255, 255, .3)"
+                indicator-active-color="#fff"
+        >
+            <swiper-item wx:for-items="{{swipers}}" wx:key="index">
+                <image src="{{item}}" mode="aspectFill"></image>
+            </swiper-item>
+        </swiper>
+<!--        图标分类 -->
+        <swiper class="big-logo" enable-flex="true" scroll-x="true" bind:change = 'getCurrentIndex'>
+            <swiper-item >
+                <view wx:for-items="{{logostop}}" wx:key="index">
+                    <image src="{{item.imgUrl}}" mode="aspectFit" lazy-load="true"></image>
+                    <text>{{item.title}}</text>
+                </view>
+            </swiper-item>
+            <swiper-item>
+                <view wx:for-items="{{logosbottom}}" wx:key="index">
+                    <image src="{{item.imgUrl}}" mode="aspectFit" lazy-load="true"></image>
+                    <text>{{item.title}}</text>
+                </view>
+            </swiper-item>
+        </swiper>
+<!--        图标分类的滑动指示点-->
+        <view class="indicator-dots">
+            <view>
+                <text class=" {{CurrentIndex===0?'dots_default_color':'dots_color'}}"></text>
+                <text class="{{CurrentIndex===1?'dots_default_color':'dots_color '}}"></text>
+            </view>
+        </view>
+<!--        京东秒杀-->
+        <view class="secKill">
+            <view class="title">
+                <view class="title_left">
+                    <text>京东秒杀</text>
+                    <view>
+                        <text>18点场</text>
+                        <text>00:00:00</text>
+                    </view>
+                </view>
+                <view class="title_right">
+                    <text>更多好货限时疯抢</text>
+                    <image src="../../image/index/right.png" mode="aspectFit" lazy-load="true"></image>
+                </view>
+            </view>
+            <scroll-view scroll-x="true" class="seckill_goods" enable-flex="true">
+                <view wx:for-items="{{seckill_goods}}" wx:key="index">
+                    <image src="{{item.imgUrl}}" mode="aspectFit"></image>
+                    <text>￥{{item.newPrice}}</text>
+                    <text>￥{{item.oldPrice}}</text>
+                </view>
+            </scroll-view>
+<!--        每日推荐-->
+            <view class="recommend">
+                <view class="static">
+                    <text>品牌闪购</text>
+                    <text class="purple">品牌限时特卖</text>
+                    <image mode="aspectFit" src="../../image/index/tj1.jpg"></image>
+                </view>
+                <view class="static">
+                    <text>排行榜</text>
+                    <text class="pink">跟榜购好物</text>
+                    <image mode="aspectFit" src="../../image/index/tj2.jpg"></image>
+                </view>
+                <view class="static">
+                    <text>每日特价</text>
+                    <text class="orange">9块9疯抢</text>
+                    <swiper autoplay="true" duration="2000" interval="4000" circular="true" vertical="true" class="tuiJian">
+                        <swiper-item wx:for="{{tuiJian}}" wx:key="index" class="tuiJian" catch:touchmove="stopTouchMove">
+                            <image mode="aspectFit" src="{{item}}"></image>
+                        </swiper-item>
+                    </swiper>
+                </view>
+                <view class="static">
+                    <text>新品首发</text>
+                    <text class="blue">全网抢先购</text>
+                    <image mode="aspectFit" src="../../image/index/tj3.jpg"></image>
+                </view>
+            </view>
+        </view>
+<!--        商品描述-->
+        <view class="goods_list">
+            <view wx:for="{{goods_item}}" wx:key="index" data-item ='{{item}}' bind:tap="getItem">
+                <image mode="widthFix" src="{{item.imgUrl}}"></image>
+                <text>{{item.title}}</text>
+                <text>￥{{item.newPrice}}</text>
+            </view>
+        </view>
+    </scroll-view>
+</view>

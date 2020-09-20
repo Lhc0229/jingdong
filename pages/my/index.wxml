@@ -1,0 +1,2 @@
+<!--pages/my/index.wxml-->
+<button open-type="getUserInfo" bind:getuserinfo="getUserInfo">授权登录</button>

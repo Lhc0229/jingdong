@@ -1,0 +1,37 @@
+<!--pages/cart/index.wxml-->
+<view>
+    <view class="main">
+        <checkbox-group bindchange="checkboxChange">
+            <view wx:for="{{data}}" class="flex" wx:key="index">
+                <view>
+                    <checkbox value="{{item.objectId}}" checked="{{checked}}"/>
+                    <image mode="widthFix" src="{{item.imgUrl}}"></image>
+                </view>
+                <view>
+                    <text>{{item.title}}</text>
+                    <view>
+                        <text>￥{{item.price}}</text>
+                        <view>
+                            <button size="mini" bind:tap="handle" data-index="-" data-item="{{item}}">-</button>
+                            <text>{{item.count}}</text>
+                            <button size="mini" bind:tap="handle" data-index="+" data-item="{{item}}">+</button>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </checkbox-group>
+    </view>
+    <view class="footer">
+        <view class="block">
+            <view>
+                <checkbox value="" checked="" bind:tap="change"/>全选
+            </view>
+            <view>
+                <view>
+                    合计<text>￥{{price}}</text>
+                </view>
+                <button size="mini">结算</button>
+            </view>
+        </view>
+    </view>
+</view>
